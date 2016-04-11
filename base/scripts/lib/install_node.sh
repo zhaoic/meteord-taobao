@@ -10,7 +10,7 @@ NODE_DIST=node-v${NODE_VERSION}-linux-${NODE_ARCH}
 cd /tmp
 # curl -O -L http://nodejs.org/dist/v${NODE_VERSION}/${NODE_DIST}.tar.gz
 # zhaoic qiniu
-curl -O -L http://d3sqy0vbqsdhku.cloudfront.net/nodejs/v${NODE_VERSION}/${NODE_DIST}.tar.gz
+curl --progress-bar  --insecure http://d3sqy0vbqsdhku.cloudfront.net/nodejs/v${NODE_VERSION}/${NODE_DIST}.tar.gz
 tar xvzf ${NODE_DIST}.tar.gz
 rm -rf /opt/nodejs
 mv ${NODE_DIST} /opt/nodejs
