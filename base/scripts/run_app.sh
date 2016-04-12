@@ -4,6 +4,9 @@ if [ -d /bundle ]; then
   cd /bundle
   tar xzf *.tar.gz
   cd /bundle/bundle/programs/server/
+  echo "=> [zhaoic] fix fibers"
+  npm uninstall fibers
+  npm install fibers
   npm i
   cd /bundle/bundle/
 elif [[ $BUNDLE_URL ]]; then
