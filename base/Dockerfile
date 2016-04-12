@@ -22,5 +22,8 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 RUN npm -g install npm@latest
 #RUN apt-get install -qq -y npm
 
+#RUN npm uninstall fibers && npm install fibers
+#RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
+
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
