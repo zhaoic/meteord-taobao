@@ -13,16 +13,18 @@ COPY scripts $METEORD_DIR
 
 RUN bash $METEORD_DIR/lib/install_base.sh
 RUN bash $METEORD_DIR/lib/install_node.sh
+
+RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set disturl https://npm.taobao.org/dist
+
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
 
 #RUN apt-get install -qq -y graphicsmagick
 
-#RUN npm -g install cnpm
 RUN npm -g install npm@latest
-#RUN apt-get install -qq -y npm
 
-#RUN npm uninstall fibers && npm install fibers
+RUN npm uninstall fibers && npm install fibers
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
 EXPOSE 80
