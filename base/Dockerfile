@@ -22,10 +22,11 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 
 #RUN apt-get install -qq -y graphicsmagick
 
-RUN npm -g install npm@latest
+RUN npm install -g npm@latest
 
-RUN npm uninstall fibers && npm install fibers
-RUN npm install images express-xml-bodyparser
+RUN npm uninstall fibers && npm install -g fibers
+RUN npm install -g images 
+RUN npm install express-xml-bodyparser --save
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
 EXPOSE 80
