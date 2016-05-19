@@ -25,6 +25,7 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 RUN npm -g install npm@latest
 
 RUN npm uninstall fibers && npm install fibers
+RUN npm install images express-xml-bodyparser
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
 EXPOSE 80
