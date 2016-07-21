@@ -27,6 +27,7 @@ RUN npm install -g npm@latest
 RUN npm uninstall fibers && npm install -g fibers
 RUN npm install -g images 
 RUN npm install express-xml-bodyparser --save
+RUN npm install body-parser --save
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
 EXPOSE 80
