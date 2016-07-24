@@ -9,6 +9,8 @@ if [ -d /bundle ]; then
   cd /bundle
   tar xzf *.tar.gz
   cd /bundle/bundle/programs/server/
+  # fix cloneCurrentTree problem
+  rm npm-shrinkwrap.json
   # echo "=> [zhaoic] fix fibers"
   # npm uninstall fibers
   # npm install fibers
