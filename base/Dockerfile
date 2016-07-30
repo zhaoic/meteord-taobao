@@ -1,5 +1,5 @@
-FROM index.alauda.cn/library/debian:jessie
-MAINTAINER Zhaoic
+FROM index.alauda.cn/library/debian:wheezy
+MAINTAINER MeteorHacks Pvt Ltd.
 
 #RUN echo "deb http://mirrors.aliyun.com/debian/ wheezy main non-free contrib" > /etc/apt/sources.list
 
