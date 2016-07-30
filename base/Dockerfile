@@ -1,4 +1,4 @@
-FROM index.alauda.cn/library/debian:wheezy
+FROM index.alauda.cn/library/debian:jessie
 MAINTAINER MeteorHacks Pvt Ltd.
 
 #RUN echo "deb http://mirrors.aliyun.com/debian/ wheezy main non-free contrib" > /etc/apt/sources.list
@@ -22,7 +22,7 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 
 #RUN apt-get install -qq -y graphicsmagick
 
-RUN npm install -g npm@latest
+#RUN npm install -g npm@latest
 
 RUN npm uninstall fibers && npm install -g fibers
 RUN npm install -g images

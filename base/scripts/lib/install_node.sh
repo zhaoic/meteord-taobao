@@ -18,4 +18,8 @@ mv ${NODE_DIST} /opt/nodejs
 ln -sf /opt/nodejs/bin/node /usr/bin/node
 ln -sf /opt/nodejs/bin/npm /usr/bin/npm
 
+echo "=> [**]Install npm@3"
+npm config set registry https://registry.npm.taobao.org
+npm config set disturl https://npm.taobao.org/dist
 npm install --global npm@3
+echo "=> [**]Install npm@3 done"
