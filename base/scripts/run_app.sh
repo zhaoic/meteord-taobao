@@ -4,34 +4,34 @@ npm config set registry https://registry.npm.taobao.org
 npm config set disturl https://npm.taobao.org/dist
 echo "=> Prepare run app."
 
-if [ -d /bundle ]; then
-  echo "=> unzip /bundle."
-  cd /bundle
-  tar xzf *.tar.gz
-  cd /bundle/bundle/programs/server/
-  # fix cloneCurrentTree problem
-  rm npm-shrinkwrap.json
-  # echo "=> [zhaoic] fix fibers"
-  # npm uninstall fibers
-  # npm install fibers
-  echo "=> npm install."
-  npm install --unsafe-perm
-  cd /bundle/bundle/
-elif [[ $BUNDLE_URL ]]; then
-  echo "=> unzip url bundle."
-  cd /tmp
-  curl -L -o bundle.tar.gz $BUNDLE_URL
-  tar xzf bundle.tar.gz
-  cd /tmp/bundle/programs/server/
-  npm install --unsafe-perm
-  cd /tmp/bundle/
-elif [ -d /built_app ]; then
-  echo "=> /bundle_app."
-  cd /built_app
-else
-  echo "=> You don't have an meteor app to run in this image."
-  exit 1
-fi
+# if [ -d /bundle ]; then
+#   echo "=> unzip /bundle."
+#   cd /bundle
+#   tar xzf *.tar.gz
+#   cd /bundle/bundle/programs/server/
+#   # fix cloneCurrentTree problem
+#   rm npm-shrinkwrap.json
+#   # echo "=> [zhaoic] fix fibers"
+#   # npm uninstall fibers
+#   # npm install fibers
+#   echo "=> npm install."
+#   npm install --unsafe-perm
+#   cd /bundle/bundle/
+# elif [[ $BUNDLE_URL ]]; then
+#   echo "=> unzip url bundle."
+#   cd /tmp
+#   curl -L -o bundle.tar.gz $BUNDLE_URL
+#   tar xzf bundle.tar.gz
+#   cd /tmp/bundle/programs/server/
+#   npm install --unsafe-perm
+#   cd /tmp/bundle/
+# elif [ -d /built_app ]; then
+#   echo "=> /bundle_app."
+#   cd /built_app
+# else
+#   echo "=> You don't have an meteor app to run in this image."
+#   exit 1
+# fi
 
 if [[ $REBUILD_NPM_MODULES ]]; then
   if [ -f /opt/meteord/rebuild_npm_modules.sh ]; then

@@ -30,5 +30,7 @@ RUN npm install express-xml-bodyparser --save
 RUN npm install body-parser --save
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
+RUN bash $METEORD_DIR/lib/install_npm.sh
+
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
