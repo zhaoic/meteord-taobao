@@ -24,15 +24,14 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 
 #RUN npm install -g npm@latest
 
-RUN npm uninstall fibers && npm install --unsafe-perm fibers
+RUN npm uninstall fibers && npm install -g fibers
 RUN npm install -g images
 RUN npm install express-xml-bodyparser --save
 RUN npm install body-parser --save
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
-RUN npm install --unsafe-perm bcrypt bootstrap-sass express i18n-react ladda lodash meteor-node-stubs moment pixeden-stroke-7-icon
-RUN npm install --unsafe-perm qiniu qiniu-js react react-addons-pure-render-mixin react-dom react-komposer-plus react-ladda
-RUN npm install --unsafe-perm react-mounter react-redux react-router react-simple-di redux redux-thunk sweetalert wechat
+COPY package.json /
+RUN bash $METEORD_DIR/lib/install_npm.sh
 
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
