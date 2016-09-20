@@ -30,8 +30,9 @@ RUN npm install express-xml-bodyparser --save
 RUN npm install body-parser --save
 #RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
 
-COPY package.json /
-RUN bash $METEORD_DIR/lib/install_npm.sh
+RUN npm install -g bcrypt bootstrap-sass express i18n-react ladda lodash meteor-node-stubs moment pixeden-stroke-7-icon
+RUN npm install -g qiniu qiniu-js react react-addons-pure-render-mixin react-dom react-komposer-plus react-ladda
+RUN npm install -g react-mounter react-redux react-router react-simple-di redux redux-thunk sweetalert wechat
 
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
