@@ -36,4 +36,3 @@ RUN npm install -g react-mounter react-redux react-router react-simple-di redux 
 
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
-
