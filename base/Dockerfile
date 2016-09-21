@@ -1,34 +1,13 @@
-FROM index.alauda.cn/library/debian:jessie
-MAINTAINER MeteorHacks Pvt Ltd.
-
-#RUN echo "deb http://mirrors.aliyun.com/debian/ wheezy main non-free contrib" > /etc/apt/sources.list
-
-COPY debian.163.sourcelist  /etc/apt/sources.list
-#COPY debian.ustc.sourcelist  /etc/apt/sources.list
+FROM index.alauda.cn/zhaoic/debian:m1
+MAINTAINER Maodou Ltd.
 
 ENV METEORD_DIR /opt/meteord
-COPY scripts $METEORD_DIR
 
-#RUN bash $METEORD_DIR/init.sh
+ADD /opt/bundle.tar.gz /bundle
 
-RUN bash $METEORD_DIR/lib/install_base.sh
-RUN bash $METEORD_DIR/lib/install_node.sh
-
-RUN npm config set registry https://registry.npm.taobao.org
-RUN npm config set disturl https://npm.taobao.org/dist
-
-RUN bash $METEORD_DIR/lib/install_phantomjs.sh
-RUN bash $METEORD_DIR/lib/cleanup.sh
-
-#RUN apt-get install -qq -y graphicsmagick
-
-#RUN npm install -g npm@latest
-
-RUN npm uninstall fibers && npm install -g fibers
-RUN npm install -g images
-RUN npm install express-xml-bodyparser --save
-RUN npm install body-parser --save
-#RUN cd /bundle/bundle/programs/server/node_modules/fibers && node build.js
+RUN cd /bundle/bundle/programs/server/
+RUN npm install --unsafe-perm
+RUN cd /bundle/bundle/
 
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
