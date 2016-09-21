@@ -16,7 +16,7 @@ set -e
 #   # npm install fibers
   # echo "=> npm install."
 #   npm install --unsafe-perm
-  # cd /bundle/bundle/
+#   cd /bundle/bundle/
 # elif [[ $BUNDLE_URL ]]; then
 #   echo "=> unzip url bundle."
 #   cd /tmp
