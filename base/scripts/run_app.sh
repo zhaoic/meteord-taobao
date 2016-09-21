@@ -4,7 +4,7 @@ set -e
 # npm config set disturl https://npm.taobao.org/dist
 # echo "=> Prepare run app."
 
-if [ -d /bundle ]; then
+# if [ -d /bundle ]; then
 #   echo "=> unzip /bundle."
 #   cd /bundle
 #   tar xzf *.tar.gz
@@ -14,9 +14,9 @@ if [ -d /bundle ]; then
 #   # echo "=> [zhaoic] fix fibers"
 #   # npm uninstall fibers
 #   # npm install fibers
-  echo "=> npm install."
+  # echo "=> npm install."
 #   npm install --unsafe-perm
-  cd /bundle/bundle/
+  # cd /bundle/bundle/
 # elif [[ $BUNDLE_URL ]]; then
 #   echo "=> unzip url bundle."
 #   cd /tmp
@@ -31,7 +31,7 @@ if [ -d /bundle ]; then
 # else
 #   echo "=> You don't have an meteor app to run in this image."
 #   exit 1
-fi
+# fi
 
 # if [[ $REBUILD_NPM_MODULES ]]; then
 #   if [ -f /opt/meteord/rebuild_npm_modules.sh ]; then
