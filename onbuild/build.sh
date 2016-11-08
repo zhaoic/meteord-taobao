@@ -1,2 +1,2 @@
-docker build -t="index.alauda.cn/zhaoic/meteord:onbuild" .
+docker build -t="maodouio/meteord:onbuild" .
 

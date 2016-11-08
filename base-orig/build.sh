@@ -1,1 +1,1 @@
-docker build -t="meteorhacks/meteord:base" .
+docker build -t="maodouio/meteord:base" .
