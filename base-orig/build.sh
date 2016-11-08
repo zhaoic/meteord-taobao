@@ -1,0 +1,1 @@
+docker build -t="meteorhacks/meteord:base" .

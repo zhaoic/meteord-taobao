@@ -1,4 +1,4 @@
-FROM index.alauda.cn/zhaoic/meteord:base
+FROM meteorhacks/meteord:base
 MAINTAINER MeteorHacks Pvt Ltd.
 
 ONBUILD COPY ./ /app
