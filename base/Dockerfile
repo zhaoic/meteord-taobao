@@ -16,8 +16,7 @@ RUN bash $METEORD_DIR/lib/install_node.sh
 
 RUN npm config set registry https://registry.npm.taobao.org
 RUN npm config set disturl https://npm.taobao.org/dist
-RUN export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-RUN export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
+COPY node-gyp ~/.node-gyp
 
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
