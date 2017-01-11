@@ -17,6 +17,7 @@ RUN bash $METEORD_DIR/lib/install_node.sh
 RUN npm config set registry https://registry.npm.taobao.org
 RUN npm config set disturl https://npm.taobao.org/dist
 COPY node-gyp ~/.node-gyp
+COPY node_modules_node-gyp /opt/
 
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
