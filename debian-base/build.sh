@@ -1,1 +1,1 @@
-docker build -t="index.alauda.cn/zhaoic/debian:m1" .
+docker build -t="index.alauda.cn/zhaoic/debian:node840" .
