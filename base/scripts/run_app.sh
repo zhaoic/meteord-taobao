@@ -8,9 +8,10 @@ if [ -d /bundle ]; then
   echo "=> unzip /bundle."
   cd /bundle
   tar xzf *.tar.gz
+  rm *.tar.gz
   cd /bundle/bundle/programs/server/
-  mkdir /bundle/bundle/programs/server/node_modules
-  mv /opt/node_modules_node-gyp /bundle/bundle/programs/server/node_modules/
+ # mkdir /bundle/bundle/programs/server/node_modules
+  # mv /opt/node_modules_node-gyp /bundle/bundle/programs/server/node_modules/
   # fix cloneCurrentTree problem
   rm npm-shrinkwrap.json
   # echo "=> [zhaoic] fix fibers"

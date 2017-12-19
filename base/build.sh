@@ -1,1 +1,1 @@
-docker build -t="index.alauda.cn/zhaoic/meteord:base840" .
+docker build -t="registry.cn-beijing.aliyuncs.com/maodouio/meteord:base891" .
